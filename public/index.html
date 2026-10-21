@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Friends Cards</title>
+  <link rel="stylesheet" href="/css/shared.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <header>
+    <button id="sync-btn">Sync tout</button>
+    <button id="sync-me-btn">Sync mes cartes</button>
+    <button id="sync-friend-btn">Sync un ami</button>
+    <button id="sync-prices-btn">Sync prix</button>
+    <div id="progress"></div>
+    <button id="token-btn">Token</button>
+  </header>
+  <div id="friend-sync-panel" style="display: none;">
+    <select id="friend-select">
+      <option value="">Choisir un ami...</option>
+    </select>
+    <button id="friend-sync-confirm">Synchroniser</button>
+  </div>
+  <div id="token-overlay">
+    <div id="token-modal">
+      <h2>Token actif</h2>
+      <table><tbody id="token-tbody"></tbody></table>
+      <button id="token-close">Fermer</button>
+    </div>
+  </div>
+  <div id="err"></div>
+  <div class="filters">
+    <div id="rarities">
+      <label><input type="checkbox" value="L"  checked>L</label>
+      <label><input type="checkbox" value="R"  checked>R</label>
+      <label><input type="checkbox" value="SR" checked>SR</label>
+      <label><input type="checkbox" value="UR" checked>UR</label>
+      <label><input type="checkbox" value="PC" checked>PC</label>
+      <label><input type="checkbox" value="C"  checked>C</label>
+    </div>
+    <div id="tag-filters"></div>
+    <input type="search" id="search" placeholder="Rechercher titre, description, ami…">
+    <label class="toggle-wrap">
+      <input type="checkbox" id="show-all">
+      <span class="toggle-track"></span>
+      Cartes non possédées
+    </label>
+    <span id="count"></span>
+  </div>
+  <table>
+    <thead><tr>
+      <th data-col="rarity" class="asc">Rareté</th>
+      <th data-col="wikipedia_title">Titre</th>
+      <th data-col="category">Description</th>
+      <th data-col="username">Détenteur</th>
+      <th data-col="avg_price">Moyenne</th>
+      <th>Tags</th>
+    </tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <script src="/js/shared.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>
